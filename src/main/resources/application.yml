@@ -1,0 +1,35 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+spring:
+  mvc:
+    static-path-pattern: "/static/**" # 静态访问资源路径
+    static-locations: "classpath:/static/,/upload/" # 静态加载资源路径
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+      exclude: "static/**"
+servlet:
+  multipart:
+    max-file-size: 10MB
+    max-request-size: 10MB
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: "default"
+      paths-to-match: "/**"
+      packages-to-scan: com
+#knife4j:
+#  enable: true
+#  setting:
+#    language: zh_cn
+#    swagger-model-name: "实体类"
+

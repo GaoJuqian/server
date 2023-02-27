@@ -1,6 +1,7 @@
 package com.gaojuqian.server.controller;
 
 import com.gaojuqian.server.entity.User;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
@@ -15,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Tag(name = "你好他妈的世界")
 @RestController
 public class HelloController {
     /**
