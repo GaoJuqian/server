@@ -3,19 +3,17 @@ package com.gaojuqian.server.controller;
 import com.gaojuqian.server.entity.User;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.net.ssl.HandshakeCompletedEvent;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.File;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Tag(name = "你好他妈的世界")
 @RestController
@@ -48,6 +46,7 @@ public class HelloController {
     public Object uploadFile(MultipartFile file, HttpServletRequest request) {
 
         String path = request.getServletContext().getRealPath("/upload/");
+        System.out.println(path);
         File dir = new File(path);
         if (!dir.exists()) dir.mkdir();
 

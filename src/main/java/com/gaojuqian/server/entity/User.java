@@ -1,7 +1,6 @@
 package com.gaojuqian.server.entity;
-
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import javax.validation.constraints.NotNull;
 
 @Data
 public class User {

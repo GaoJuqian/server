@@ -2,29 +2,30 @@ server:
   port: 8080
   servlet:
     context-path: /
-spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useSSL=false
-    username: root
-    password: 123456
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印sql
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useSSL=false
+    username: root
+    password: 123456
   mvc:
     static-path-pattern: "/static/**" # 静态访问资源路径
-    static-locations: "classpath:/static/,/upload/" # 静态加载资源路径
+  web:
+    resources:
+      static-locations: "classpath:/static/,/upload/" # 静态存放资源路径
   devtools:
     restart:
       enabled: true
       additional-paths: src/main/java
       exclude: "static/**"
-servlet:
-  multipart:
-    max-file-size: 100MB # 上传文件大小限制
-    max-request-size: 100MB # 上传请求大小限制
-
+  servlet:
+    multipart:
+      max-file-size: 100MB # 上传文件大小限制
+      max-request-size: 100MB # 上传请求大小限制
 springdoc:
   swagger-ui:
     path: /api.html
