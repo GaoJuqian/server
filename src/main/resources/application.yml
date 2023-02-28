@@ -18,7 +18,7 @@ servlet:
 
 springdoc:
   swagger-ui:
-    path: /swagger-ui.html
+    path: /api.html
     tags-sorter: alpha
     operations-sorter: alpha
   api-docs:

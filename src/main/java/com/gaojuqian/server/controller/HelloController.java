@@ -1,6 +1,7 @@
 package com.gaojuqian.server.controller;
 
 import com.gaojuqian.server.entity.User;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -25,6 +26,7 @@ public class HelloController {
      * @param result
      * @return
      */
+    @Operation(summary = "你好世界")
     @PostMapping("/hello")
     public Object hello(@Valid @RequestBody User user, BindingResult result) {
         if (result.hasErrors()) {
