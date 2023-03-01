@@ -6,7 +6,6 @@
         select *
         from user
     </select>
-
     <select id="selectUserById" resultType="com.gaojuqian.server.entity.User">
         select *
         from user

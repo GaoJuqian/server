@@ -42,6 +42,7 @@ public class HelloController {
      * @param request getRealPath
      * @return 上传成功
      */
+    @Operation(summary = "上传文件")
     @PostMapping("/uploadFile")
     public Object uploadFile(MultipartFile file, HttpServletRequest request) {
 
