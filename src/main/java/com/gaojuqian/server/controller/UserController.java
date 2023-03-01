@@ -1,10 +1,14 @@
 package com.gaojuqian.server.controller;
+
 import com.gaojuqian.server.entity.User;
 import com.gaojuqian.server.mapper.UserMapper;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @Tag(name = "用户")
@@ -20,4 +24,12 @@ public class UserController {
         List<User> userList = userMapper.selectUserList();
         return userList;
     }
+
+    @Tag(name = "获取用户")
+    @GetMapping("/user/{id}")
+    public User getUser(@PathVariable Integer id) {
+        User user = userMapper.selectUserById(id);
+        return user;
+    }
+
 }
